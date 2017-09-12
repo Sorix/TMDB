@@ -31,7 +31,7 @@ class StackTableViewCell: UITableViewCell {
 			// If image is already downloaded
 			add(toStack: movie)
 		} else {
-			// If image is now downloaded
+			// If image is downloaded
 			let downloadImageOperation = ImageDownloadOperation(from: movie.posterPath)
 			downloadImageOperation.downloadCompletionBlock = { image, error in
 				DispatchQueue.main.async {

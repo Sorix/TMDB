@@ -12,32 +12,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieView" customModule="TMDB" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MovieView" customModule="TMDB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="180" height="247"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="247"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzH-if-UZJ">
-                    <rect key="frame" x="0.0" y="0.0" width="180" height="247"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="247"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSN-dF-nFo">
-                            <rect key="frame" x="8" y="8" width="164" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSN-dF-nFo">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LMh-2f-eQW">
-                            <rect key="frame" x="8" y="37" width="164" height="202"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LMh-2f-eQW">
+                            <rect key="frame" x="0.0" y="32" width="300" height="207"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="iSN-dF-nFo" firstAttribute="leading" secondItem="yzH-if-UZJ" secondAttribute="leading" constant="8" id="3Fu-GZ-iFk"/>
-                        <constraint firstItem="LMh-2f-eQW" firstAttribute="leading" secondItem="yzH-if-UZJ" secondAttribute="leading" constant="8" id="7e7-C0-bSq"/>
-                        <constraint firstAttribute="width" constant="180" id="HZn-de-Gvg"/>
-                        <constraint firstAttribute="trailing" secondItem="LMh-2f-eQW" secondAttribute="trailing" constant="8" id="fHn-zs-zVg"/>
+                        <constraint firstItem="iSN-dF-nFo" firstAttribute="leading" secondItem="yzH-if-UZJ" secondAttribute="leading" id="3Fu-GZ-iFk"/>
+                        <constraint firstItem="LMh-2f-eQW" firstAttribute="leading" secondItem="yzH-if-UZJ" secondAttribute="leading" id="7e7-C0-bSq"/>
+                        <constraint firstAttribute="width" constant="300" id="HZn-de-Gvg"/>
+                        <constraint firstAttribute="trailing" secondItem="LMh-2f-eQW" secondAttribute="trailing" id="fHn-zs-zVg"/>
                         <constraint firstAttribute="bottom" secondItem="LMh-2f-eQW" secondAttribute="bottom" priority="750" constant="8" id="j8g-jH-NB2"/>
-                        <constraint firstItem="iSN-dF-nFo" firstAttribute="top" secondItem="yzH-if-UZJ" secondAttribute="top" constant="8" id="mX2-CB-V63"/>
+                        <constraint firstItem="iSN-dF-nFo" firstAttribute="top" secondItem="yzH-if-UZJ" secondAttribute="top" id="mX2-CB-V63"/>
                         <constraint firstItem="LMh-2f-eQW" firstAttribute="top" secondItem="iSN-dF-nFo" secondAttribute="bottom" constant="8" id="suy-4l-vUE"/>
-                        <constraint firstAttribute="trailing" secondItem="iSN-dF-nFo" secondAttribute="trailing" constant="8" id="xZq-lD-EBF"/>
+                        <constraint firstAttribute="trailing" secondItem="iSN-dF-nFo" secondAttribute="trailing" id="xZq-lD-EBF"/>
                     </constraints>
                 </view>
             </subviews>
@@ -54,7 +54,7 @@
                 <outlet property="movieImageView" destination="LMh-2f-eQW" id="XYt-07-wSW"/>
                 <outlet property="nameLabel" destination="iSN-dF-nFo" id="2Vi-1n-kCk"/>
             </connections>
-            <point key="canvasLocation" x="-226" y="-38.5"/>
+            <point key="canvasLocation" x="-166" y="-38.5"/>
         </view>
     </objects>
 </document>

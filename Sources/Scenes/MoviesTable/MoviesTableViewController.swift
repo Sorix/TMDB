@@ -18,6 +18,11 @@ class MoviesTableViewController: UITableViewController {
 		MoviesTableSectionData(title: "Highest Rated This Year")
 	]
 	
+	struct Identifiers {
+		static let cell = "stackCell"
+		static let header = "sectionHeader"
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -28,6 +33,9 @@ class MoviesTableViewController: UITableViewController {
 	
 	private func configureTableView() {
 		tableView.rowHeight = 200
+		tableView.estimatedSectionHeaderHeight = 10
+		tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+		tableView.register(SectionHeaderFooterView.nib, forHeaderFooterViewReuseIdentifier: Identifiers.header)
 	}
 	
 	func fetchData() {
@@ -52,6 +60,8 @@ class MoviesTableViewController: UITableViewController {
 
 extension MoviesTableViewController {
 	
+	// MARK: Numbers
+	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return tableData.count
 	}
@@ -60,12 +70,18 @@ extension MoviesTableViewController {
 		return 1
 	}
 	
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return tableData[section].title
+	// MARK: Section title
+	
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: Identifiers.header) as? SectionHeaderFooterView
+		view?.sectionTitleLabel.text = tableData[section].title
+		return view
 	}
 	
+	// MARK: Cell
+	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "stackCell", for: indexPath) as! StackTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.cell, for: indexPath) as! StackTableViewCell
 		cell.add(movies: tableData[indexPath.section].movies)
 		return cell
 	}

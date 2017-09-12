@@ -14,17 +14,17 @@
         <scene sceneID="7KE-Vv-kY3">
             <objects>
                 <tableViewController id="aK2-3Q-4fx" customClass="MoviesTableViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" id="yJu-wo-VzJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="119" sectionHeaderHeight="18" sectionFooterHeight="18" id="yJu-wo-VzJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="vDG-PE-U1Q">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ek-1U-ate">
-                                    <rect key="frame" x="8" y="20" width="304" height="20.5"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ek-1U-ate">
+                                    <rect key="frame" x="8" y="20" width="304" height="33.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -38,17 +38,17 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="stackCell" rowHeight="119" id="6vp-DX-wLt" customClass="StackTableViewCell" customModule="TMDB" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="320" height="119"/>
+                                <rect key="frame" x="0.0" y="116.5" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6vp-DX-wLt" id="XoI-2K-6Z0">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFW-e4-nfl">
-                                            <rect key="frame" x="16" y="16" width="288" height="86.5"/>
+                                            <rect key="frame" x="8" y="8" width="304" height="103"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bs-X6-V7N">
-                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="86.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0bs-X6-V7N">
+                                                    <rect key="frame" x="0.0" y="0.0" width="304" height="103"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -62,10 +62,10 @@
                                         </scrollView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="TFW-e4-nfl" secondAttribute="bottom" constant="8" id="KrJ-q6-L4O"/>
-                                        <constraint firstItem="TFW-e4-nfl" firstAttribute="leading" secondItem="XoI-2K-6Z0" secondAttribute="leadingMargin" constant="8" id="VPl-1b-VZ4"/>
-                                        <constraint firstItem="TFW-e4-nfl" firstAttribute="top" secondItem="XoI-2K-6Z0" secondAttribute="topMargin" constant="8" id="ZrJ-bN-uUI"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="TFW-e4-nfl" secondAttribute="trailing" constant="8" id="aT6-yI-OUj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="TFW-e4-nfl" secondAttribute="bottom" id="KrJ-q6-L4O"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="TFW-e4-nfl" secondAttribute="leading" id="SxO-Kx-zlG"/>
+                                        <constraint firstItem="TFW-e4-nfl" firstAttribute="top" secondItem="XoI-2K-6Z0" secondAttribute="topMargin" id="ZrJ-bN-uUI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TFW-e4-nfl" secondAttribute="trailing" id="aT6-yI-OUj"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2101E921F6834B7005A7233 /* SectionHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2101E901F6834B7005A7233 /* SectionHeaderFooterView.swift */; };
+		E2101E931F6834B7005A7233 /* SectionHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2101E911F6834B7005A7233 /* SectionHeaderFooterView.xib */; };
 		E21DF3E21F6725B700D7A1FB /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21DF3E11F6725B700D7A1FB /* MovieView.swift */; };
 		E21DF3E41F6726A400D7A1FB /* tmdb.plist in Resources */ = {isa = PBXBuildFile; fileRef = E21DF3E31F6726A400D7A1FB /* tmdb.plist */; };
 		E21DF3E91F67325400D7A1FB /* TMDBConfigurationReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21DF3E81F67325400D7A1FB /* TMDBConfigurationReader.swift */; };
@@ -58,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E2101E901F6834B7005A7233 /* SectionHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionHeaderFooterView.swift; path = SectionHeaderFooterView.swift; sourceTree = "<group>"; };
+		E2101E911F6834B7005A7233 /* SectionHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SectionHeaderFooterView.xib; path = SectionHeaderFooterView.xib; sourceTree = "<group>"; };
 		E21DF3E11F6725B700D7A1FB /* MovieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		E21DF3E31F6726A400D7A1FB /* tmdb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tmdb.plist; sourceTree = "<group>"; };
 		E21DF3E81F67325400D7A1FB /* TMDBConfigurationReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBConfigurationReader.swift; sourceTree = "<group>"; };
@@ -105,6 +109,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2101E941F6834C8005A7233 /* Section Header */ = {
+			isa = PBXGroup;
+			children = (
+				E2101E901F6834B7005A7233 /* SectionHeaderFooterView.swift */,
+				E2101E911F6834B7005A7233 /* SectionHeaderFooterView.xib */,
+			);
+			name = "Section Header";
+			path = "Section Header";
+			sourceTree = "<group>";
+		};
 		E21DF3EC1F67354A00D7A1FB /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E28B877A1F67F64900D554CF /* Cell */,
+				E2101E941F6834C8005A7233 /* Section Header */,
 				E258A7F01F681D5C003D3A26 /* MoviesTableSectionData.swift */,
 				E2D222DB1F670C8000583894 /* MoviesTableViewController.swift */,
 			);
@@ -363,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2101E931F6834B7005A7233 /* SectionHeaderFooterView.xib in Resources */,
 				E2D222E61F670C8000583894 /* LaunchScreen.storyboard in Resources */,
 				E2D222E31F670C8000583894 /* Assets.xcassets in Resources */,
 				E2D222E11F670C8000583894 /* Main.storyboard in Resources */,
@@ -394,6 +410,7 @@
 				E2D222DC1F670C8000583894 /* MoviesTableViewController.swift in Sources */,
 				E2CE88CD1F67E6560070860F /* StackTableViewCell.swift in Sources */,
 				E21DF3E21F6725B700D7A1FB /* MovieView.swift in Sources */,
+				E2101E921F6834B7005A7233 /* SectionHeaderFooterView.swift in Sources */,
 				E258A7F11F681D5C003D3A26 /* MoviesTableSectionData.swift in Sources */,
 				E258A7F51F682DC6003D3A26 /* APIRequests.swift in Sources */,
 				E28B877E1F6805FB00D554CF /* ImageDownloadOperation.swift in Sources */,
