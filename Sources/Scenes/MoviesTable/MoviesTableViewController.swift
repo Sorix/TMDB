@@ -25,8 +25,7 @@ class MoviesTableViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		MoviesTableViewController.imageDownloadQueue.maxConcurrentOperationCount = 1
+
 		configureTableView()
 		fetchData()
 	}
@@ -38,16 +37,7 @@ class MoviesTableViewController: UITableViewController {
 		tableView.register(SectionHeaderFooterView.nib, forHeaderFooterViewReuseIdentifier: Identifiers.header)
 	}
 	
-	func fetchData() {
-		let config = TMDBConfigurationReader.read()
-		let api = API(endpoint: config.endpoint, apiKey: config.token)
-		
-		api.fetch(request: APIRequest.inTheatres) { self.add(movies: $0, to: 0) }
-		api.fetch(request: APIRequest.popular) { self.add(movies: $0, to: 1) }
-		api.fetch(request: APIRequest.highestRated) { self.add(movies: $0, to: 2) }
-	}
-	
-	private func add(movies: [Movie], to section: Int) {
+	fileprivate func add(movies: [Movie], to section: Int) {
 		self.tableData[section].movies = movies
 		DispatchQueue.main.async {
 			self.tableView.reloadSections([section], with: .automatic)
@@ -86,6 +76,22 @@ extension MoviesTableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.cell, for: indexPath) as! StackTableViewCell
 		cell.add(movies: tableData[indexPath.section].movies)
 		return cell
+	}
+	
+}
+
+// MARK: - Data fetching
+
+// We can move that logic to presenter / other class, but in test project I simplified some things.
+extension MoviesTableViewController {
+
+	func fetchData() {
+		let config = TMDBConfigurationReader.read()
+		let api = API(endpoint: config.endpoint, apiKey: config.token)
+		
+		api.fetch(request: APIRequest.inTheatres) { self.add(movies: $0, to: 0) }
+		api.fetch(request: APIRequest.popular) { self.add(movies: $0, to: 1) }
+		api.fetch(request: APIRequest.highestRated) { self.add(movies: $0, to: 2) }
 	}
 	
 }

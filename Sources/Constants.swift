@@ -10,5 +10,5 @@ import Foundation
 
 struct Constants {
 	static let tmdbPlistName = "tmdb"
-	static let posterURLPrefix = URL(string: "http://image.tmdb.org/t/p/w185/")!
+	static let posterURLPrefix = URL(string: "http://image.tmdb.org/t/p/w342/")!
 }
