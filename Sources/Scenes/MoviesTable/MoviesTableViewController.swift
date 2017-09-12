@@ -53,6 +53,8 @@ class MoviesTableViewController: UITableViewController {
 			self.tableView.reloadSections([section], with: .automatic)
 		}
 	}
+	
+	override var prefersStatusBarHidden: Bool { return true }
 
 }
 
