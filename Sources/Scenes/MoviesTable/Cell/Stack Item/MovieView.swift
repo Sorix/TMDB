@@ -16,7 +16,7 @@ class MovieView: UIView {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 
-		movieImageView.layer.cornerRadius = 8.0
+		movieImageView.layer.cornerRadius = 4.0
 		movieImageView.clipsToBounds = true
 	}
 	
