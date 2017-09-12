@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>tmdbAPI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>E21DF3FB1F673EAA00D7A1FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E2D222D51F670C8000583894</key>
 		<dict>
 			<key>primary</key>

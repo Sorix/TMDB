@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E2D222D51F670C8000583894"
-               BuildableName = "TMDB.app"
-               BlueprintName = "TMDB"
+               BlueprintIdentifier = "E21DF3FB1F673EAA00D7A1FB"
+               BuildableName = "tmdbAPI.framework"
+               BlueprintName = "tmdbAPI"
                ReferencedContainer = "container:TMDB.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E2D222D51F670C8000583894"
-            BuildableName = "TMDB.app"
-            BlueprintName = "TMDB"
-            ReferencedContainer = "container:TMDB.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,23 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E2D222D51F670C8000583894"
-            BuildableName = "TMDB.app"
-            BlueprintName = "TMDB"
+            BlueprintIdentifier = "E21DF3FB1F673EAA00D7A1FB"
+            BuildableName = "tmdbAPI.framework"
+            BlueprintName = "tmdbAPI"
             ReferencedContainer = "container:TMDB.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -77,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E2D222D51F670C8000583894"
-            BuildableName = "TMDB.app"
-            BlueprintName = "TMDB"
+            BlueprintIdentifier = "E21DF3FB1F673EAA00D7A1FB"
+            BuildableName = "tmdbAPI.framework"
+            BlueprintName = "tmdbAPI"
             ReferencedContainer = "container:TMDB.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
