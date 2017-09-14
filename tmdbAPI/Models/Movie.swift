@@ -14,6 +14,7 @@ public struct Movie {
 	public let posterRelativePath: String
 	public let originalTitle: String
 	
+	/// Initialize Movie object from JSON data
 	init?(json: [String: Any]) {
 		guard let title = json["original_title"] as? String,
 			let posterPath = json["backdrop_path"] as? String,

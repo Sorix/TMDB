@@ -13,11 +13,20 @@ public class API {
 	let endpoint: URL
 	let apiKey: String
 	
+	/// - Parameters:
+	///   - endpoint: api endpoint url, example: `https://api.themoviedb.org/4/`
 	public init(endpoint: URL, apiKey: String) {
 		self.endpoint = endpoint
 		self.apiKey = apiKey
 	}
 	
+	/// Send request to TMDB API
+	///
+	/// - Parameters:
+	///   - request: request conforming to `RequestModel` protocol
+	///   - completion:
+	///		- answer: parsed answer according to `RequestModel.AnswerModel`, maybe `nil` if any errors occured
+	///		- error: error, `nil` if everything is okay
 	public func send<T: RequestModel>(request: T, completion: @escaping (_ answer: T.AnswerModel?, _ error: Error?) -> Void) {
 		guard let urlWithParameters = queryURL(method: request.method, parameters: request.parameters) else {
 			completion(nil, ApiError.custom(description: "API request URL malformed"))

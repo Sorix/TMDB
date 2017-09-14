@@ -11,4 +11,11 @@ import Foundation
 enum ApiError: Error {
 	case custom(description: String)
 	case invalidAnswer
+	
+	var localizedDescription: String {
+		switch self {
+		case .custom(let description): return description
+		case .invalidAnswer: return "Unexpected answer from API"
+		}
+	}
 }

@@ -8,11 +8,14 @@
 
 import Foundation
 
+/// Model for `MoviesTableViewController`
 class MoviesTableSectionData {
+	
 	var movies = [Movie]()
 	var title: String
 	
 	init(title: String) {
 		self.title = title
 	}
+	
 }

@@ -15,12 +15,13 @@ class StackTableViewCell: UITableViewCell {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		// Initialization code
 		
 		stackView.axis = .horizontal
 	}
 	
-	func add(movies: [Movie]) {
+	func set(movies: [Movie]) {
+		clearStack()
+		
 		for movie in movies {
 			downloadAndAdd(movie: movie)
 		}
@@ -48,6 +49,12 @@ class StackTableViewCell: UITableViewCell {
 		let movieView = MovieView.instanceFromNib()
 		movieView.display(movie: movie)
 		stackView.addArrangedSubview(movieView)
+	}
+	
+	private func clearStack() {
+		for subview in stackView.arrangedSubviews {
+			stackView.removeArrangedSubview(subview)
+		}
 	}
 	
 }

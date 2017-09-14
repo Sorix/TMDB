@@ -47,7 +47,6 @@ class API {
 	
 	// MARK: - Private methods
 	
-	
 	private func convert(apiMovie: tmdbAPI.Movie) -> TMDB.Movie {
 		let posterPath = Constants.posterURLPrefix.appendingPathComponent(apiMovie.posterRelativePath)
 		return TMDB.Movie(title: apiMovie.originalTitle, posterPath: posterPath)

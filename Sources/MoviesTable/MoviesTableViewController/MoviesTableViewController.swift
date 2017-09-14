@@ -30,6 +30,8 @@ class MoviesTableViewController: UITableViewController {
 		fetchData()
 	}
 	
+	override var prefersStatusBarHidden: Bool { return true }
+	
 	private func configureTableView() {
 		tableView.rowHeight = 200
 		tableView.estimatedSectionHeaderHeight = 10
@@ -37,47 +39,14 @@ class MoviesTableViewController: UITableViewController {
 		tableView.register(SectionHeaderFooterView.nib, forHeaderFooterViewReuseIdentifier: Identifiers.header)
 	}
 	
+	
 	fileprivate func add(movies: [Movie], to section: Int) {
 		self.tableData[section].movies = movies
 		DispatchQueue.main.async {
 			self.tableView.reloadSections([section], with: .automatic)
 		}
 	}
-	
-	override var prefersStatusBarHidden: Bool { return true }
 
-}
-
-// MARK: - TableViewController delegates
-
-extension MoviesTableViewController {
-	
-	// MARK: Numbers
-	
-	override func numberOfSections(in tableView: UITableView) -> Int {
-		return tableData.count
-	}
-	
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
-	}
-	
-	// MARK: Section title
-	
-	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: Identifiers.header) as? SectionHeaderFooterView
-		view?.sectionTitleLabel.text = tableData[section].title
-		return view
-	}
-	
-	// MARK: Cell
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.cell, for: indexPath) as! StackTableViewCell
-		cell.add(movies: tableData[indexPath.section].movies)
-		return cell
-	}
-	
 }
 
 // MARK: - Data fetching
@@ -89,9 +58,22 @@ extension MoviesTableViewController {
 		let config = TMDBConfigurationReader.read()
 		let api = API(endpoint: config.endpoint, apiKey: config.token)
 		
-		api.fetch(request: APIRequest.inTheatres) { self.add(movies: $0, to: 0) }
-		api.fetch(request: APIRequest.popular) { self.add(movies: $0, to: 1) }
-		api.fetch(request: APIRequest.highestRated) { self.add(movies: $0, to: 2) }
+		ActivityIndicator.start(activities: 3)
+		
+		api.fetch(request: APIRequest.inTheatres) {
+			self.add(movies: $0, to: 0)
+			ActivityIndicator.stop()
+		}
+		
+		api.fetch(request: APIRequest.popular) {
+			self.add(movies: $0, to: 1)
+			ActivityIndicator.stop()
+		}
+		
+		api.fetch(request: APIRequest.highestRated) {
+			self.add(movies: $0, to: 2)
+			ActivityIndicator.stop()
+		}
 	}
 	
 }
