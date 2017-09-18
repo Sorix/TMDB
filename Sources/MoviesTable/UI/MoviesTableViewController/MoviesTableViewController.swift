@@ -23,6 +23,8 @@ class MoviesTableViewController: UITableViewController {
 		static let header = "sectionHeader"
 	}
 	
+	var fetcher: MoviesFetcher?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -38,9 +40,8 @@ class MoviesTableViewController: UITableViewController {
 		tableView.sectionHeaderHeight = UITableViewAutomaticDimension
 		tableView.register(SectionHeaderFooterView.nib, forHeaderFooterViewReuseIdentifier: Identifiers.header)
 	}
-	
-	
-	fileprivate func add(movies: [Movie], to section: Int) {
+
+	func add(movies: [Movie], to section: Int) {
 		self.tableData[section].movies = movies
 		DispatchQueue.main.async {
 			self.tableView.reloadSections([section], with: .automatic)
@@ -48,33 +49,3 @@ class MoviesTableViewController: UITableViewController {
 	}
 
 }
-
-// MARK: - Data fetching
-
-// We can move that logic to presenter / other class, but in test project I simplified some things.
-extension MoviesTableViewController {
-
-	func fetchData() {
-		let config = TMDBConfigurationReader.read()
-		let api = API(endpoint: config.endpoint, apiKey: config.token)
-		
-		ActivityIndicator.start(activities: 3)
-		
-		api.fetch(request: APIRequest.inTheatres) {
-			self.add(movies: $0, to: 0)
-			ActivityIndicator.stop()
-		}
-		
-		api.fetch(request: APIRequest.popular) {
-			self.add(movies: $0, to: 1)
-			ActivityIndicator.stop()
-		}
-		
-		api.fetch(request: APIRequest.highestRated) {
-			self.add(movies: $0, to: 2)
-			ActivityIndicator.stop()
-		}
-	}
-	
-}
-

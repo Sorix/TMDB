@@ -12,7 +12,7 @@ import Foundation
 class MoviesTableSectionData {
 	
 	var movies = [Movie]()
-	var title: String
+	let title: String
 	
 	init(title: String) {
 		self.title = title
