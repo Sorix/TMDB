@@ -10,6 +10,8 @@ import UIKit
 
 class MoviesTableViewController: UITableViewController {
 	
+	// MARK: - Variables
+	
 	static var imageDownloadQueue = OperationQueue() // static var for less complexity for test project
 	
 	var tableData = [
@@ -25,6 +27,8 @@ class MoviesTableViewController: UITableViewController {
 	
 	var fetcher: MoviesFetcher?
 	
+	// MARK: - Methods
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -39,13 +43,6 @@ class MoviesTableViewController: UITableViewController {
 		tableView.estimatedSectionHeaderHeight = 10
 		tableView.sectionHeaderHeight = UITableViewAutomaticDimension
 		tableView.register(SectionHeaderFooterView.nib, forHeaderFooterViewReuseIdentifier: Identifiers.header)
-	}
-
-	func add(movies: [Movie], to section: Int) {
-		self.tableData[section].movies = movies
-		DispatchQueue.main.async {
-			self.tableView.reloadSections([section], with: .automatic)
-		}
 	}
 
 }
